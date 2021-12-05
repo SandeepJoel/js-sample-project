@@ -1,12 +1,12 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const { merge } = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { merge } = require('webpack-merge');
 
-const paths = require('./paths')
-const common = require('./webpack.common')
+const paths = require('./paths');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: 'development',
   devtool: false,
   output: {
     path: paths.build,
@@ -42,6 +42,9 @@ module.exports = merge(common, {
   ],
   optimization: {
     minimize: true,
+    innerGraph: true,
+    sideEffects: true,
+    usedExports: true,
     minimizer: [new CssMinimizerPlugin(), '...'],
     runtimeChunk: {
       name: 'runtime',
@@ -52,4 +55,4 @@ module.exports = merge(common, {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-})
+});

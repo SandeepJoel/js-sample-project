@@ -1,5 +1,8 @@
 // Test import of a JavaScript module
 import { example } from '@/js/example'
+import { fromJoel } from 'my-js-library'
+
+console.log(fromJoel('Finally'))
 
 // Test import of an asset
 import webpackLogo from '@/images/webpack-logo.svg'
