@@ -16,6 +16,9 @@
     "webpack 5",
     "webpack boilerplate"
   ],
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  },
   "devDependencies": {
     "my-js-library": "*",
     "@babel/core": "^7.15.8",

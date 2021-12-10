@@ -1,3 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter.ttf');
@@ -5,3 +11,7 @@
 
 @import 'variables';
 @import 'scaffolding';
+
+.box {
+  background: rgb(89, 223, 160);
+}
