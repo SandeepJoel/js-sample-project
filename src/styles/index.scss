@@ -1,9 +1,3 @@
-@tailwind base;
-
-@tailwind components;
-
-@tailwind utilities;
-
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter.ttf');
@@ -12,6 +6,28 @@
 @import 'variables';
 @import 'scaffolding';
 
-.box {
-  background: rgb(89, 223, 160);
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.wrapper {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid yellow;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+}
+
+.box-4 {
+  grid-row: span 2 / auto;
+}
+
+.box-1 {
+  grid-column: span 2 / auto;
 }

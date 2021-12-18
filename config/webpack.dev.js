@@ -1,20 +1,18 @@
-const { merge } = require('webpack-merge')
-
-const common = require('./webpack.common')
-
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 module.exports = merge(common, {
   // Set the mode to development or production
   mode: 'development',
 
   // Control how source maps are generated
-  devtool: 'inline-source-map',
+  devtool: 'eval',
 
   // Spin up a server for quick development
   devServer: {
     historyApiFallback: true,
     compress: true,
     hot: true,
-    port: 8080,
+    port: 8080
   },
 
   module: {
@@ -26,12 +24,12 @@ module.exports = merge(common, {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true, importLoaders: 1, modules: false },
+            options: { sourceMap: true, importLoaders: 1, modules: false }
           },
           { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
-        ],
-      },
-    ],
-  },
-})
+          { loader: 'sass-loader', options: { sourceMap: true } }
+        ]
+      }
+    ]
+  }
+});

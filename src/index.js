@@ -2,6 +2,7 @@
 import { example } from '@/js/example';
 
 // Test import of styles
+import '@/styles/my-tailwind.scss';
 import '@/styles/index.scss';
 
 /* 
